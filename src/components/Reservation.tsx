@@ -1,12 +1,17 @@
 import React from 'react'
+import { useDispatch } from "react-redux";
+import { removeResevation } from '../features/ReservationSlice';
 
 interface ReservationType{
-    name:string
+    name:string,
+    index:number
 }
 
-const Reservation = ({name}:ReservationType) => {
+const Reservation = ({name,index}:ReservationType) => {
+    const dispatch=useDispatch()
+
   return (
-    <div className="reservation-card-container">{name}</div>
+    <div onClick={()=>{dispatch(removeResevation(index))}} className="reservation-card-container">{name}</div>
   )
 }
 
