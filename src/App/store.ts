@@ -1,7 +1,8 @@
 import { configureStore} from '@reduxjs/toolkit'
+import ReservationReducer from '../features/ReservationSlice'
 export const store=configureStore({
     reducer:{
-
+        reservations:ReservationReducer
     }
 })
 
